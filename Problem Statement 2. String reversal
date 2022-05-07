@@ -1,0 +1,25 @@
+//Problem Statement 2 String reversal
+def reverse_each_word(sentence):
+
+	sl = sentence.split(' ')
+	s2 = ''
+	
+	for i in sl:
+		rev_word = ''
+		str_word = ''
+		
+		for j in i:
+			if j.isalnum():
+				str_word += j
+			else:
+				rev_word += str_word[::-1] + j
+				str_word = ''
+				
+		reverse = rev_word + str_word[::-1]
+		s2 += reverse + ' '
+	return s2
+
+sentence = 'String; 2be reversed...'
+# sentence='ABC@9 XYZ__PQR %WX_#_Z' // Output 2
+
+print(reverse_each_word(sentence))
