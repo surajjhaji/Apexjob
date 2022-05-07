@@ -1,0 +1,11 @@
+//Problem Statement 1: Get the game details & tournament count
+//Selenium using Python
+
+from selenium import webdriver
+
+driver = webdriver.Chrome('E://chromedriver.exe')
+driver.get("https://game.tv")
+c=driver.find_elements_by_class_name("games-item")
+for i in c:
+    link=i.find_element_by_tag_name("a").get_attribute("href")
+    print(i.text+" "+link)
